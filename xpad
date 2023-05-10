@@ -1,0 +1,53 @@
+#!/bin/bash
+# a script to setup bug bounty tools in google cloud console
+echo "Installing GoLang"
+apt install golang
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+GO111MODULE=on
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+echo "Installed"
+echo "Installing Nuclei"
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+echo "Installed"
+echo "Installing assetfinder"
+go install -v github.com/tomnomnom/assetfinder@latest
+echo "Installed"
+apt install git
+git clone https://github.com/FortyNorthSecurity/EyeWitness
+./EyeWitness/Python/setup/setup.sh 
+echo "./EyeWitness/Python/setup/setup.sh " >> ~/.bashrc
+echo "export PATH=$PATH:$HOME/EyeWitness" >> $HOME/.bashrc
+echo "Installing Naabu"
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+echo "Installed"
+echo "setting up ngrok"
+# Download and extract ngrok binary
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+
+# Add ngrok to PATH
+echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
+source ~/.bashrc
+
+# Authenticate with ngrok
+echo "Please enter your ngrok authtoken:"
+read authtoken
+./ngrok authtoken $authtoken
+
+# Done!
+echo "Ngrok installation complete."
+
+echo "installing gau"
+go install github.com/lc/gau/v2/cmd/gau@latest
+echo "Installed"
+echo "Installing Waybackurls"
+go install github.com/tomnomnom/waybackurls@latest
+echo "Installed"
+echo "Installing httpx"
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+echo "Installed"
+echo "Installing anew"
+go install -v github.com/tomnomnom/anew@latest
+echo "Installed"
