@@ -8,7 +8,7 @@ X-Pad will setup some of my fevourite bug bounty tools in google cloud console.
 
 ```javascript
 sudo apt install wget
-wget [url](https://github.com/zenithx01/xpad/raw/main/xpad)
+wget https://github.com/zenithx01/xpad/raw/main/xpad
 chmod +x xpad
 sudo ./xpad
 ```
