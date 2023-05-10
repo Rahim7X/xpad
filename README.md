@@ -32,5 +32,3 @@ sudo ./xpad
 
 #### This script also sets up ngrok to download. you can use it to download your results 
 
-Answer 1
-
