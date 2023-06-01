@@ -51,3 +51,6 @@ echo "Installed"
 echo "Installing anew"
 go install -v github.com/tomnomnom/anew@latest
 echo "Installed"
+
+echo "Installing Subfinder"
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
