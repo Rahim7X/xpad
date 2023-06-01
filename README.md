@@ -24,6 +24,7 @@ sudo ./xpad
 - naabu
 - waybackurls
 - httpx
+- Subfinder
 - ngrok
 
 
